@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <script>
+      function installButtonClicked(){
+        getFile();
+        renameModsFolder();
+      }
+    </script>
+    <div class="main">
+      <h1>Welcome to the modpack installer!</h1>
+      <h4>Click to install the latest modpack</h4>
+      <button id="install-button" class="install-button" onclick="installButtonClicked()">Install</button>
+      <progress class="progressbar" id="progressbar" value="0" max="100"> 32% </progress>
+      <h5 class="status-label" id="status-label">Starting...</h5>
+    </div>
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>

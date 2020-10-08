@@ -1,0 +1,21 @@
+{ 
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "flex:slime_stick",
+      "data": 0
+    },
+    {
+      "item": "flex:flex_block",
+      "data": 0
+    },
+    {
+      "item": "minecraft:slime",
+      "data": 0
+    }
+  ],
+  "result": {
+    "item": "flex:my_sword",
+    "data": 0
+  }
+}
