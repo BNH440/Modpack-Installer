@@ -23,12 +23,12 @@ const editJsonFile = require("edit-json-file");
 
 function renameModsFolder(){
   document.getElementById("progressbar").value = "55"
-  document.getElementById("status-label").innerHTML = "Backing Up Old Mods..."
+  document.getElementById("status-label").innerHTML = "Making new directory..."
 
 
   //const currPath = process.env.APPDATA + "/.minecraft/mods"
   //const newPath = process.env.APPDATA + "/.minecraft/modsBackupFile"
-
+  /*
   const currPath = "./mods"
   const newPath = "./modsBackupFile"
 
@@ -38,11 +38,18 @@ function renameModsFolder(){
   } else {
       console.log("Successfully renamed the directory.")
   }
-  })  
+  })  */
+
+  var dir = 'C:/Users/' + os.userInfo().username + '/AppData/Roaming/.minecraftModpack';
+
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+  }
 }
 
 
 function getFile(){
+    gameDir = 'C:/Users/' + os.userInfo().username + '/AppData/Roaming/.minecraftModpack';
     document.getElementById("install-button").style.display = "none"
     document.getElementById("progressbar").style.display = "block"
     document.getElementById("status-label").style.display = "block"
@@ -58,20 +65,20 @@ function getFile(){
       })
     }
     
-    const fileurl = 'https://modpack.page.link/bjYi'
-    const filepath = './mods.zip'
+    const fileurl = 'https://modpack.page.link/bjYi';
+    const filepath = gameDir + '/mods.zip';
   
     download(fileurl, filepath, () => {
-      fs.createReadStream('./mods.zip').pipe(unzipper.Extract({ path: './mods' }));
+      fs.createReadStream(gameDir + '/mods.zip').pipe(unzipper.Extract({ path: gameDir }));
       console.log('Done!')
       document.getElementById("progressbar").value = "50"
     })
 
     let file = editJsonFile("C:/Users/" + os.userInfo().username + "/AppData/Roaming/.minecraft/launcher_profiles.json");
-
+    
     file.set("profiles.Modpack", {
       //"created": "2018-03-17T21:00:20.119Z",
-      //"gameDir": "C:\\Users\\bnh44\\AppData\\Roaming\\.minecraftCrazyCraft",
+      "gameDir": gameDir,
       "icon": "TNT",
       //"javaArgs": "-Xmx8G -Dorg.lwjgl.opengl.Window.undecorated=true -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M",
       //"lastUsed": "2020-07-24T00:31:41.193Z",

@@ -10,7 +10,10 @@
     "win": "build --win",
     "clean": "rm -rf dist"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BNH440/Modpack-Installer.git"
+  },
   "keywords": [
     "Electron",
     "quick",
@@ -44,5 +47,9 @@
       "oneClick": false,
       "perMachine": true
     }
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/electron/electron-quick-start/issues"
+  },
+  "homepage": "https://github.com/electron/electron-quick-start#readme"
 }

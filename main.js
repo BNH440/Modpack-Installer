@@ -11,6 +11,8 @@ var request = require('request')
 var unzipper = require('unzipper');
 
 function createWindow () {
+  const nativeImage = electron.nativeImage;
+  const icon = require('@/img/app-icon.png');
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
@@ -18,9 +20,10 @@ function createWindow () {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true
-    }
+    },
+    icon: nativeImage.createFromDataURL(icon.default)
   })
-
+ 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 
