@@ -10,6 +10,19 @@ var spawn = require('child_process').spawn;
 var request = require('request')
 var unzipper = require('unzipper')
 const { autoUpdater } = require("electron-updater")
+const log = require('electron-log');
+
+
+app.on('ready', function()  {
+  autoUpdater.checkForUpdatesAndNotify();
+});
+
+autoUpdater.logger = log;
+autoUpdater.logger.transports.file.level = 'info';
+log.info('App starting...');
+
+
+
 
 function createWindow () {
   // Create the browser window.
@@ -52,7 +65,7 @@ app.on('window-all-closed', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-
+/*
 const isMac = process.platform === 'darwin'
 
 const template = [
@@ -61,9 +74,4 @@ const template = [
 
 const menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu)
-
-
-
-app.on('ready', function()  {
-  autoUpdater.checkForUpdatesAndNotify();
-});
+*/
