@@ -1,6 +1,6 @@
 {
   "name": "modpack-installer",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "An Installer for Modpacks",
   "main": "main.js",
   "scripts": {
