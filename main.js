@@ -63,15 +63,6 @@ const menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu)
 
 
-export default class AppUpdater {
-  constructor() {
-    const log = require("electron-log")
-    log.transports.file.level = "debug"
-    autoUpdater.logger = log
-    autoUpdater.checkForUpdatesAndNotify()
-  }
-}
-
 
 app.on('ready', function()  {
   autoUpdater.checkForUpdatesAndNotify();
