@@ -1,6 +1,6 @@
 {
   "name": "modpack-installer",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "An Installer for Modpacks",
   "main": "main.js",
   "scripts": {
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "edit-json-file": "^1.4.1",
+    "electron-log": "^4.2.4",
     "electron-sudo": "^4.0.12",
     "electron-updater": "^4.3.5",
     "jquery": "^3.5.1",
