@@ -1,6 +1,6 @@
 {
   "name": "modpack-installer",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "An Installer for Modpacks",
   "main": "main.js",
   "scripts": {
@@ -42,8 +42,7 @@
     "productName": "Modpack Installer",
     "appId": "tech.blakeh.modpackInstaller",
     "win": {
-      "target": "nsis",
-      "requestedExecutionLevel": "requireAdministrator"
+      "target": "nsis"
     },
     "nsis": {
       "guid": "eb1a0fbb-fc70-428e-97f1-fa7080894806",
