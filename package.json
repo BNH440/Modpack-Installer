@@ -36,7 +36,8 @@
     "electron-updater": "^3.2.3",
     "jquery": "^3.5.1",
     "request": "^2.88.2",
-    "unzipper": "^0.10.11"
+    "unzipper": "^0.10.11",
+    "wine": "^0.9.13"
   },
   "build": {
     "productName": "Modpack Installer",
