@@ -1,6 +1,6 @@
 {
   "name": "modpack-installer",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "An Installer for Modpacks",
   "main": "main.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "mac": "build --mac",
     "linux": "build --linux",
     "win": "build --win",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "publish": "build --win -p always"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
   "dependencies": {
     "edit-json-file": "^1.4.1",
     "electron-sudo": "^4.0.12",
+    "electron-updater": "^4.3.5",
     "jquery": "^3.5.1",
     "request": "^2.88.2",
     "unzipper": "^0.10.11"
@@ -46,7 +48,14 @@
       "guid": "eb1a0fbb-fc70-428e-97f1-fa7080894806",
       "oneClick": false,
       "perMachine": true
-    }
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "BNH440",
+        "repo": "Modpack-Installer"
+      }
+    ]
   },
   "bugs": {
     "url": "https://github.com/electron/electron-quick-start/issues"

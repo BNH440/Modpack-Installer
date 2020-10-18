@@ -1,6 +1,6 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, Menu} = require('electron')
-const http = require('https');
+const http = require('https')
 const path = require('path')
 const url = require('url')
 const fs = require('fs')
@@ -8,20 +8,18 @@ const os = require('os')
 var exec = require('child_process').exec;
 var spawn = require('child_process').spawn;
 var request = require('request')
-var unzipper = require('unzipper');
+var unzipper = require('unzipper')
+const { autoUpdater } = require("electron-updater")
 
 function createWindow () {
-  const nativeImage = electron.nativeImage;
-  const icon = require('@/img/app-icon.png');
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
-    height: 480,
+    height: 478,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true
-    },
-    icon: nativeImage.createFromDataURL(icon.default)
+    }
   })
  
   // and load the index.html of the app.
@@ -54,7 +52,7 @@ app.on('window-all-closed', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-/*
+
 const isMac = process.platform === 'darwin'
 
 const template = [
@@ -62,7 +60,7 @@ const template = [
 ]
 
 const menu = Menu.buildFromTemplate(template)
-Menu.setApplicationMenu(menu)*/
+Menu.setApplicationMenu(menu)
 
 
 
