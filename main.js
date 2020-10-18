@@ -71,3 +71,8 @@ export default class AppUpdater {
     autoUpdater.checkForUpdatesAndNotify()
   }
 }
+
+
+app.on('ready', function()  {
+  autoUpdater.checkForUpdatesAndNotify();
+});
